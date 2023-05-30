@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <div x-data="{ message: 'Hello' }">
+      <!--binding html element-->
+      <h1 x-text="message"></h1>
+      <!--binding html attribute. -->
+      <!--placeholder="message" just puts the initial message string as the placeholder. -->
+      <input type="text" placeholder="message" />
+      <!-- to bind the value of the message variable, we use the x-bind directive whose shortcut is : which results in one-way data binding-->
+      <input type="text" :placeholder="message" />
+      <!--x-model directive helps achieve two-way data binding-->
+      <input type="text" x-model="message" />
+      <button @click="message = 'Hi'">Say Hi</button>
+      <button @click="message = 'Bye'">Say Bye</button>
+    </div>
+  </body>
+</html>

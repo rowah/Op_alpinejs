@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 x-data="{ message: 'We ❤️ Alpine' }" x-text="message"></h1>
+    <div x-data="{ open: false }">
+      <!-- @click and x-on:click are basically the same only that the former reads nicely-->
+      <button @click="open = true">Expand</button>
+
+      <span x-show="open"> Content... </span>
+    </div>
+
+    <!-- the div is called an alpine component. -->
+
+    <div x-data="{ message: 'Hello' }">
+      <button x-on:click="alert(message)">Say Hi</button>
+    </div>
+    <!-- there is local scoping in every single alpine component which makes the same button not to alert the same message when it is outside of the div where the where the message variable is defined. Another message variable can however be defined inside the button as well-->
+    <button x-on:click="alert(message)">Say Hi</button>
+  </body>
+</html>
