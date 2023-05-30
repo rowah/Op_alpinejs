@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div x-data="{ message: 'Hello'}">
+      <h1 x-text="message"></h1>
+      <input type="text" x-model="message" />
+      <button @click="message = 'Hi'">Say Hi</button>
+    </div> -->
+    <div x-data="{ firstNo: 0, secondNo: 0}">
+      <h1 x-text="message = 'Ola'"></h1>
+      <!--the sum gives a string since the number inputs are interpreted as strings. We use the .number modifiers to the the x-model to convert the strings to numbers-->
+
+      <input type="number" x-model.number.lazy="firstNo" /> +
+      <input type="number" x-model.number.lazy="secondNo" /> =
+      <!--the sum gives a string since the number inputs are interpreted as strings.-->
+      <span x-text="firstNo + secondNo"></span>
+    </div>
+  </body>
+</html>

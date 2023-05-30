@@ -1,0 +1,12 @@
+<html>
+<head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ first: 0, second: 0 }">
+        <input type="number" x-model.number.lazy="first">
+        <input type="number" x-model.number.lazy="second">
+        <span x-text="first + second"></span>
+    </div>
+</body>
+</html>
