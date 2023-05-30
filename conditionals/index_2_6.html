@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <!-- sets page to an empty string -->
+    <div x-data="{ page: '' }">
+      <!-- sets page to different gages when each button is clicked-->
+      <button @click="page = ''">Home</button>
+      <button @click="page = 'settings'">Settings</button>
+      <button @click="page = 'profile'">Profile</button>
+
+      <!-- template element is only rendered using javascript -->
+      <!-- checks what the value of the page is at any given time and renders the corresponding heading using the x-if directive-->
+      <template x-if="page === ''">
+        <h1>Home</h1>
+      </template>
+      <template x-if="page === 'settings'">
+        <h1>Settings</h1>
+      </template>
+      <template x-if="page === 'profile'">
+        <h1>Profile</h1>
+      </template>
+    </div>
+  </body>
+</html>
