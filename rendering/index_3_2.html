@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <ul
+      x-data="{ users: [
+      { id: 1, first_name: 'James' },
+      { id: 2, first_name: 'John' },
+      { id: 3, first_name: 'Jane' },
+    ] }"
+    >
+      <!-- in for loops on objects, there is the x-bind for object id written as :key for x-bind:key here; alpine uses it behind the key to smartly rended the objects should you add or remove elements. So instead of binding the first name to the key of the for loop, you use the special id-->
+      <template x-for="user in users" :key="user.id">
+        <li x-text="user.first_name"></li>
+      </template>
+    </ul>
+  </body>
+</html>

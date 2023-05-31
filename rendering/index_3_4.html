@@ -1,0 +1,27 @@
+<html>
+<head>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+  <ul
+    x-data="usersList"
+    x-init="users = await fetchUsers()"
+  >
+    <template x-for="user in users" :key="user.id">
+      <li x-text="user.first_name"></li>
+    </template>
+  </ul>
+  <script>
+    const usersList = () => {
+      return {
+        users: [],
+        fetchUsers: () => {
+          return fetch('https://reqres.in/api/users')
+            .then(response => response.json())
+            .then(result => result.data);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

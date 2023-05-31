@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <ul x-data="{ cities: ['Nairobi', 'Joburg', 'Kisumu', 'Dar-es-Salaam'] }">
+      <!-- we need the template directive and the alpine directive for for loops which is x-for-->
+      <template x-for="city in cities">
+        <li x-text="city"></li>
+      </template>
+    </ul>
+  </body>
+</html>
