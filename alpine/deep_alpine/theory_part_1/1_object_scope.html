@@ -11,7 +11,7 @@
     <title>Object & Scope | Alpine.js</title>
 </head>
 <body x-data="
-    {}
+    {bodyObj: 'I wanna be rich'}
 
 " class="bg-gradient-to-b from-gray-100 to-gray-300 bg-no-repeat h-full relative">
     <div class="container bg-gray-50 mx-auto shadow-sm p-4 min-h-screen relative">
@@ -35,14 +35,19 @@
                     </p>
                     <p>
                         <h2>Object and Scope: Where is your object visible?</h2>
-                        bodyVar: <span>placeholder</span><br>
+                        bodyVar: <span x-text="bodyObj">placeholder</span><br>
                     </p>
             
-                    <div class="bg-blue-200 w-72 p-3 mb-6 rounded shadow">
+                    <div x-data="{
+                        div1obj: 'I am DivOne'
+                    }" 
+                    x-text="div1obj"
+                    class="bg-blue-200 w-72 p-3 mb-6 rounded shadow">
                         <b>This is Div 1</b><br><br>
                     </div>
                     <div class="bg-green-200 w-72 p-3 mb-6 rounded shadow">
                         <b>This is Div 2</b><br><br>
+                        <span x-text="bodyObj">placeholder</span>
                     </div>
                     <h3>Steps in this lecture</h3>
                     <ol>
@@ -91,3 +96,5 @@
     </div>
 </body>
 </html>
+
+
