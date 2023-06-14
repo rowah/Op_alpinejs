@@ -44,6 +44,51 @@
           track you, and we'll definitely spam you. To use this site, enter your
           name and email address and accept our ridiculous terms and conditions.
         </p>
+        <!-- 
+Challenge: 
+1. Create a form using form tags.
+2. Add two inputs: one for name and one 
+   for email address.
+3. Give each input "type", "name" and 
+   "placeholder" properties. You can see the
+   placeholder text we need in the slide. 
+-->
+
+        <form action="" method="post" id="concent-form">
+          <!-- <label for=""></label> -->
+          <input
+            id=""
+            type="text"
+            name="fullName"
+            placeholder="Enter your full name"
+            required
+          />
+          <!-- <label for=""></label> -->
+          <input
+            id=""
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <div class="modal-choice-btns" id="modal-choice-btns">
+            <!-- 
+            Challenge: 
+            1. Add two buttons, one for "Accept" and one 
+               for "Decline".
+            2. Give the "Accept" button a "type" property 
+               of "submit".
+            3. Give each button a class of "modal-btn".
+            4. Make sure the form won't submit unless
+               all fields are completed. 
+            -->
+            <button class="modal-btn" type="submit">Accept</button>
+            <button class="modal-btn">Decline</button>
+            <!--any button inside of a form submits by default. adding some type attributes prevent this behaviour-->
+            <!-- <button type="reset" class="modal-btn">Decline</button> RESETS THE FORM INPUT FIELDS -->
+            <!-- <button type="button" class="modal-btn">Decline</button> PREVENTS DEFAULT SUBMISSION-->
+          </div>
+        </form>
       </div>
     </div>
     <script src="script.js"></script>
