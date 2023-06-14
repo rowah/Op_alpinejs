@@ -42,5 +42,21 @@ const modalCloseBtn = document.getElementById("modal-close-btn");
 
 modalCloseBtn.addEventListener("click", function () {
   modal.style.display = "none";
-  console.log("X clicked");
+});
+
+/*
+Challenge:
+1. Take control of the form element. 
+2. Add an eventListener to the form to listen for a
+   "submit" event.
+3. When a user clicks "accept", prevent the default
+   behaviour that triggers the refresh.
+4. Log out "form submitted".
+*/
+
+const formModal = document.getElementById("concent-form");
+formModal.addEventListener("submit", (e) => {
+  console.log(e);
+  e.preventDefault();
+  console.log("form submitted");
 });
