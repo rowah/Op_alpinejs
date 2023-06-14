@@ -8,6 +8,8 @@ setTimeout(() => {
   console.log("Ready for next question?");
 }, 6000);
 
+const closeModal = document.getElementById("modal-close-btn");
+const choiceBtns = document.getElementById("modal-choice-btns");
 /*
 Challenge:
 1. Log out the phrase "Modal Opened!" 
@@ -46,7 +48,28 @@ modalCloseBtn.addEventListener("click", function () {
   modal.style.display = "none";
 });
 
+/*Challenge: 
+1. Take control of the decline btn. (What do you
+   need to do to make that possible?) */
+const declineButton = document.getElementById("decline-btn");
+
+// 2. Set up an eventListener that is triggered
+//    when a user's cursor hovers over the decline
+//    button. (Google the event to listen out for!)
+declineButton.addEventListener("mouseover", () => {
+  // declineButton.innerText = `Accept`;
+  console.log("hovered");
+  // choiceBtns.style.flexDirection = "row-reverse";
+  choiceBtns.classList.toggle("reverse");
+});
+
+// 3. For now, just log out "hovered" when that
+//    happens.
+// */
 /*
+
+
+
 Challenge:
 1. Take control of the form element. 
 2. Add an eventListener to the form to listen for a
@@ -144,5 +167,19 @@ Challenge:
         <img src="images/pirate.png">
     </div>
     `;
+
+    /* Challenge: 
+1. Make the button that closes the modal disabled.
+2. Make that button become usable when the final 
+   modal message has been displayed to the user.
+*/
+
+    closeModal.disabled = false;
   }, 3000);
 });
+
+/* Challenge: 
+1. Make the button that closes the modal disabled.
+2. Make that button become usable when the final 
+   modal message has been displayed to the user.
+*/

@@ -35,7 +35,7 @@
     </main>
     <div class="modal" id="modal">
       <div class="close-modal-btn-container">
-        <button class="modal-close-btn" id="modal-close-btn">X</button>
+        <button class="modal-close-btn" id="modal-close-btn" disabled>X</button>
       </div>
       <div class="modal-inner" id="modal-inner">
         <h2>We ❤️ Your Data!</h2>
@@ -82,8 +82,10 @@ Challenge:
             4. Make sure the form won't submit unless
                all fields are completed. 
             -->
-            <button class="modal-btn" type="submit">Accept</button>
-            <button class="modal-btn">Decline</button>
+            <button id="accept-btn" class="modal-btn reverse" type="submit">
+              Accept
+            </button>
+            <button id="decline-btn" class="modal-btn">Decline</button>
             <!--any button inside of a form submits by default. adding some type attributes prevent this behaviour-->
             <!-- <button type="reset" class="modal-btn">Decline</button> RESETS THE FORM INPUT FIELDS -->
             <!-- <button type="button" class="modal-btn">Decline</button> PREVENTS DEFAULT SUBMISSION-->
