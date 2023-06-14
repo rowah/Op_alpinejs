@@ -45,3 +45,16 @@ input {
 img {
   width: 140px;
 }
+
+input[type="submit"],
+button {
+  margin-top: 10px;
+  padding: 12px 17px;
+  border: none;
+  background-color: #fc3d21;
+  color: #ecfeff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
