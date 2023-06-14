@@ -94,4 +94,30 @@ Challenge:
   setTimeout(() => {
     document.getElementById("uploadText").innerText = `Making the sale...`;
   }, 1500);
+
+  /*   
+Challenge: 
+1. Make it so that 1.5 seconds after seeing the 
+   "Making the sale..." message, the modal is 
+   cleared of its content and the following 
+   string of HTML is displayed instead.
+   
+   `<h2>Thanks you sucker! </h2>
+    <p>We just sold the rights to your eternal soul.</p>
+    <div class="idiot-gif">
+        <img src="images/pirate.gif">
+    </div>
+    ` 
+*/
+
+  setTimeout(() => {
+    document.getElementById(
+      "modal-inner"
+    ).innerHTML = `<h2>Thanks you sucker! </h2>
+    <p>We just sold the rights to your eternal soul.</p>
+    <div class="idiot-gif">
+        <img src="images/pirate.png">
+    </div>
+    `;
+  }, 3000);
 });
