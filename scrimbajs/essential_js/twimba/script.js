@@ -7,6 +7,40 @@ tweetBtn.addEventListener("click", () => {
   console.log(tweetInput.value);
 });
 
+//captures the event listener on the like button with data attribute
+document.addEventListener("click", (e) => {
+  /*
+Challenge:
+1. When a like icon is clicked, this function 
+   should log out the contents of the 'data-like' 
+   data-attribute.
+
+⚠️ Clicking on the page but not on the like icon
+   will log out 'undefined'. That is absolutely fine.
+*/
+  //console.log(e.target.dataset.like);
+
+  /*
+Challenge:
+1. If a like icon has been clicked, call handleLikeClick
+   passing in the uuid that is stored in the like icon's 
+   data attribute.
+*/
+  if (e.target.dataset.like) {
+    handleLikeClick(e.target.dataset.like);
+  }
+});
+
+function handleLikeClick(tweetId) {
+  /*
+    Challenge:
+    2. handleLikeClick should take in a parameter. 
+       You can call this parameter 'tweetId'. For 
+       now just log out tweetId.
+    */
+  console.log(tweetId);
+}
+
 function getFeedHtml() {
   let htmlTweet = ``;
   //   for (const tweet of tweetsData) {
@@ -67,15 +101,15 @@ Challenge:
               <p class="tweet-text">${tweet.tweetText}</p>
               <div class="tweet-details">
                   <span class="tweet-detail">
-                  <i class="fa-regular fa-comment-dots"></i>
+                  <i class="fa-regular fa-comment-dots" data-reply="${tweet.uuid}"></i>
                       ${tweet.replies.length}
                   </span>
                   <span class="tweet-detail">
-                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-heart" data-like="${tweet.uuid}"></i>
                       ${tweet.likes}
                   </span>
                   <span class="tweet-detail">
-                  <i class="fa-solid fa-retweet"></i>
+                  <i class="fa-solid fa-retweet" data-retweet="${tweet.uuid}"></i>
                       ${tweet.retweets}
                   </span>
               </div>   
