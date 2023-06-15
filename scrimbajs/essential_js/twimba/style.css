@@ -26,6 +26,10 @@ i {
   color: limegreen;
 }
 
+.fa-solid {
+  color: #999;
+}
+
 /* layout */
 
 main,

@@ -14,7 +14,7 @@ export const tweetsData = [
   {
     handle: `@Elon ✅`,
     profilePic: `images/musk.png`,
-    likes: 6500,
+    likes: 650,
     retweets: 234,
     tweetText: `I need volunteers for a one-way mission to Mars 🪐. No experience necessary🚀`,
     replies: [
