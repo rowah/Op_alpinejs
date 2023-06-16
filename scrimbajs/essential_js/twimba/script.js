@@ -39,6 +39,37 @@ function handleLikeClick(tweetId) {
        now just log out tweetId.
     */
   console.log(tweetId);
+
+  /*  Challenge:
+1. Iterate over tweetsData and use the uuid 
+   saved in tweetId to identify the liked
+   tweet's object. Save that object to a 
+   new const called 'targetTweetObj'. 
+
+⚠️ targetTweetObj should hold an object, NOT
+   an array.
+   */
+  /*
+2. Increment targetTweetObj's 'likes' count 
+   by 1. 
+/*
+3. Log out targetTweetObj
+*/
+  // tweetsData.forEach((tweet) => {
+  //   if (tweetId === tweet.uuid) {
+  //     const targetTweetObj = tweet;
+  //     targetTweetObj.likes++;
+  //     console.log(targetTweetObj);
+  //   }
+  // });
+
+  const targetTweetObj = tweetsData.filter((tweet) => {
+    return tweetId === tweet.uuid;
+  })[0];
+  targetTweetObj.likes++;
+
+  console.log(targetTweetObj);
+  render();
 }
 
 function getFeedHtml() {
