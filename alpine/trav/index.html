@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      [x-cloak] {
+        display: none;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1 x-data="{message: 'I ❤️ Alpine'}" x-text="message + ' so much!'"></h1> -->
+    <div class="container mx-auto mt-6 max-w-sm">
+      <h1 class="text-3xl mb-4">Alpine Demo</h1>
+      <div
+        x-data="{
+        open: true
+      }"
+      >
+        <!-- style="display: none" in the p tag removes the flicker that is sometimes seen on reload. ALPINE provides the x-cloak sln -->
+        <p x-show="open" class="bg-gray-600 p-4 my-6 rounded" x-cloak>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim
+          architecto debitis delectus asperiores cupiditate ab beatae! Corrupti
+          non quod necessitatibus officia unde omnis repellat ad, laboriosam
+          odit magnam blanditiis.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
