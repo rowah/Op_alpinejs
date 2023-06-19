@@ -20,9 +20,16 @@
       <h1 class="text-3xl mb-4">Alpine Demo</h1>
       <div
         x-data="{
-        open: true
+        open: false,
+        name: 'Jrowah'
       }"
       >
+        <button
+          x-on:click="open = !open"
+          class="bg-slate-700 text-white px-4 py-2 rounded-full"
+        >
+          Toggle
+        </button>
         <!-- style="display: none" in the p tag removes the flicker that is sometimes seen on reload. ALPINE provides the x-cloak sln -->
         <p x-show="open" class="bg-gray-600 p-4 my-6 rounded" x-cloak>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim
@@ -30,6 +37,9 @@
           non quod necessitatibus officia unde omnis repellat ad, laboriosam
           odit magnam blanditiis.
         </p>
+        <div class="my-4">
+          <p>My name is <span x-text="name" class="font-bold"></span></p>
+        </div>
       </div>
     </div>
   </body>
