@@ -90,7 +90,7 @@
         >
           Add Title
         </button>
-        <!-- accessing elements directly using x-refs-->
+        <!-- accessing other elements directly using x-refs-->
         <div class="my-6">
           <div x-ref="text"></div>
           <!-- @click="$refs.text.remove()" can remove text inside the div-->
@@ -103,6 +103,14 @@
         </div>
         <!-- x-html; adding data from another file -->
         <div x-html="(await axios.get('partial.html')).data"></div>
+
+        <!-- el: accesses current element -->
+        <button
+          x-on:click="$el.innerHTML = 'Replaced Text'"
+          class="bg-black text-white px-4 py-2 rounded-full mt-4"
+        >
+          Replace Text
+        </button>
       </div>
     </div>
   </body>
