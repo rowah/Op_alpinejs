@@ -7,6 +7,12 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <style>
       [x-cloak] {
         display: none;
@@ -78,6 +84,25 @@
         <template x-for="post in posts">
           <p x-text="post.title"></p>
         </template>
+        <button
+          @click="posts.push({title: 'New Post'})"
+          class="bg-blue-800 text-white px-4 py-2 rounded-full mt-4"
+        >
+          Add Title
+        </button>
+        <!-- accessing elements directly using x-refs-->
+        <div class="my-6">
+          <div x-ref="text"></div>
+          <!-- @click="$refs.text.remove()" can remove text inside the div-->
+          <button
+            @click="$refs.text.innerText = 'Hello'"
+            class="bg-black text-white px-4 py-2 rounded-full mt-4"
+          >
+            Add
+          </button>
+        </div>
+        <!-- x-html; adding data from another file -->
+        <div x-html="(await axios.get('partial.html')).data"></div>
       </div>
     </div>
   </body>
