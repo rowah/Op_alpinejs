@@ -22,7 +22,14 @@
         x-data="{
         open: false,
         name: 'Jrowah',
-        search: ''
+        search: '',
+        posts: [
+        {title: 'Post One'},
+        {title: 'Post Two'},
+        {title: 'Post Three'},
+        {title: 'Post Four'},
+        {title: 'Post Five'},
+        ]
       }"
       >
         <!-- x-on directive-->
@@ -63,6 +70,14 @@
         />
         <!--x-model makes whatever is typed in the input field to show up inside the span with the x-text directive -->
         <p><span x-text="search"></span></p>
+        <!--x-if-->
+        <template x-if="open">
+          <div class="bg-gray-100 p-2 mt-8">Rendered based on condition</div>
+        </template>
+        <h3 class="text-2xl mb-6 mt-3 font-bold">Posts</h3>
+        <template x-for="post in posts">
+          <p x-text="post.title"></p>
+        </template>
       </div>
     </div>
   </body>
